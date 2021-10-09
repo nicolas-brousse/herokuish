@@ -19,7 +19,7 @@ jobs:
     env:
       DAY_OF_WEEK: Mon
       GEM_HOME: "$GITHUB_ACTION_PATH/.gems"
-      GEM_PATH: "$GEM_HOME:$GEM_PATH"
+      GEM_PATH: "$GITHUB_ACTION_PATH/.gems:$GEM_PATH"
 
     steps:
       - uses: actions/checkout@v2
