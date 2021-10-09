@@ -11,8 +11,8 @@ on:
       - '*'
 
 env:
-  GEM_HOME: "${{ env.GITHUB_ACTION_PATH }}/.gems"
-  GEM_PATH: "${{ env.GITHUB_ACTION_PATH }}/.gems:$GEM_PATH"
+  GEM_HOME: "$GITHUB_ACTION_PATH/.gems"
+  GEM_PATH: "$GITHUB_ACTION_PATH/.gems:$GEM_PATH"
 
 jobs:
   lint:
