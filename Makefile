@@ -23,13 +23,13 @@ endif
 fpm:
 ifeq ($(SYSTEM),Linux)
 	sudo apt-get update && sudo apt-get -y install gcc git build-essential wget lintian rpm help2man man-db
-	command -v fpm >/dev/null || gem install fpm --no-ri --no-rdoc
+	command -v fpm >/dev/null || gem install fpm
 endif
 
 package_cloud:
 ifeq ($(SYSTEM),Linux)
 	sudo apt-get update && sudo apt-get -y install gcc git build-essential wget lintian rpm help2man man-db
-	command -v package_cloud >/dev/null || gem install package_cloud --no-ri --no-rdoc
+	command -v package_cloud >/dev/null || gem install package_cloud
 endif
 
 
