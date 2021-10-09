@@ -16,6 +16,11 @@ jobs:
     strategy:
       fail-fast: true
 
+    env:
+      DAY_OF_WEEK: Mon
+      GEM_HOME: "$GITHUB_ACTION_PATH/.gems"
+      GEM_PATH: "$GEM_HOME:$GEM_PATH"
+
     steps:
       - uses: actions/checkout@v2
         with:
@@ -33,12 +38,12 @@ jobs:
 
       - name: lint
         run: make lint
-        
+
       - name: install requirements
         run: make deps fpm package_cloud
 
       - name: build
         run: CIRCLECI=true make build
-      
+
       - name: bash tests
         run: basht tests/**/tests.sh
