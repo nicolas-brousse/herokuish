@@ -10,9 +10,9 @@ on:
     branches:
       - '*'
 
-  env:
-    GEM_HOME: "$GITHUB_ACTION_PATH/.gems"
-    GEM_PATH: "$GITHUB_ACTION_PATH/.gems:$GEM_PATH"
+env:
+  GEM_HOME: "${GITHUB_ACTION_PATH}/.gems"
+  GEM_PATH: "${GITHUB_ACTION_PATH}/.gems:$GEM_PATH"
 
 jobs:
   lint:
