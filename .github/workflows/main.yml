@@ -10,16 +10,15 @@ on:
     branches:
       - '*'
 
+  env:
+    GEM_HOME: "$GITHUB_ACTION_PATH/.gems"
+    GEM_PATH: "$GITHUB_ACTION_PATH/.gems:$GEM_PATH"
+
 jobs:
   lint:
     runs-on: ubuntu-18.04
     strategy:
       fail-fast: true
-
-    env:
-      DAY_OF_WEEK: Mon
-      GEM_HOME: "$GITHUB_ACTION_PATH/.gems"
-      GEM_PATH: "$GITHUB_ACTION_PATH/.gems:$GEM_PATH"
 
     steps:
       - uses: actions/checkout@v2
